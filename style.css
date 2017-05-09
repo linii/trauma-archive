@@ -7,6 +7,15 @@ body {
 	background: "art.jpg";
 }
 
+a:link, a:visited{
+	text-decoration: none;
+	color: yellow;
+}
+
+a:hover{
+	color: red;
+}
+
 img {
 	position: absolute;
 	opacity: 0.8;

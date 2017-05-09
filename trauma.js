@@ -59,18 +59,18 @@ function Panel (x, y) {
 			strokeColor = "white";
 			counter = 0;
 			frameRate(6);
-		}
 
-		size = max(0, (origSize - counter/5) + vol * 100 );
-		// var adjustedVol = vol * 10;
+
+		size = max(0, (origSize - counter/3) + vol * 10 );
 		fill("white");
 		stroke(strokeColor);
 
 		var posX = windowWidth/2 - size/2;
 		var posY = windowHeight/2 - size/2;
-		var disp1 = random([-1, 0, 1]) * randomGaussian(vol * 1000);
-		var disp2 = random([-1, 0, 1]) * randomGaussian(vol * 1000);
-
-		rect(disp1 + posX, disp2 + posY, size, size);
+		for (var i = 0; i < 10; i++) {
+			var disp1 = random([-1, 0, 1]) * randomGaussian(vol * 1000);
+			var disp2 = random([-1, 0, 1]) * randomGaussian(vol * 1000);
+			rect(disp1 + posX, disp2 + posY, size, size);
+		}
 	}
 }
