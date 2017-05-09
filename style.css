@@ -1,11 +1,29 @@
-p {
-
-
-
+body {
+	position: absolute;
+	/*background-color: black;*/
+	/*width: 400px;*/
+	margin: auto;
+	font-family: 'Inconsolata', sans-serif;
+	background: "art.jpg";
 }
 
-body {
-	background-color: black;
+img {
+	position: absolute;
+	opacity: 0.5;
+}
+.credits {
+	position: absolute;
+	right: 50px;
+	bottom: 40px;
+	font-size: 12px;
+	color: white;
+	opacity: 0.6;
+}
 
+.credits:hover {
+	opacity: 1.0;
+	background: black;
+	color: pink;
+	padding: 5px;
 
 }
