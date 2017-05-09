@@ -37,10 +37,10 @@ img {
 	opacity: 0.6;
 }
 
-.credits:hover {
+.credits:hover, .title:hover {
 	opacity: 1.0;
 	background: black;
 	color: pink;
-	padding: 5px;
+	/*padding: 5px;*/
 
 }

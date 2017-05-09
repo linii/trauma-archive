@@ -31,13 +31,12 @@ function draw() {
 function inputArchive() {
 	mic = new p5.AudioIn();
 	mic.start();
-
-	recorder = new p5.SoundRecorder();
-	recorder.setInput(mic);
-	soundFile = new p5.SoundFile();
 }
 
 function startArchive() {
+	recorder = new p5.SoundRecorder();
+	recorder.setInput(mic);
+	soundFile = new p5.SoundFile();
 	recorder.record(soundFile);
 }
 
@@ -60,7 +59,7 @@ function keyPressed() {
 
 function display (vol) {
 	var strokeColor = "white";
-	if (vol * 100 > 0.01 && !keyIsPressed) {
+	if (vol * size > 0.01 && !keyIsPressed) {
 		strokeColor = "red";
 		counter = 0;
 		frameRate(10);
@@ -81,8 +80,8 @@ function display (vol) {
 		x += disp1 * 5;
 		y += disp2 * 5;
 
-		print("x: " + x + "/" + img.width);
-		print("y: " + y + "/" + img.height);
+		// print("x: " + x + "/" + img.width);
+		// print("y: " + y + "/" + img.height);
 		rect(disp1 + posX, disp2 + posY, size, size);
 		image(img, disp1+posX, disp2+posY, size, size,
 			x, y, size, size);
