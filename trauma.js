@@ -59,6 +59,7 @@ function Panel (x, y) {
 			strokeColor = "white";
 			counter = 0;
 			frameRate(6);
+		}
 
 
 		size = max(0, (origSize - counter/3) + vol * 10 );
