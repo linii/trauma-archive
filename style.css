@@ -4,9 +4,15 @@ body {
 	/*width: 400px;*/
 	margin: auto;
 	font-family: 'Inconsolata', sans-serif;
-	background: "art.jpg";
 }
 
+.title {
+	position: fixed;
+	font-size: 30px;
+	padding: 20px;
+	color: white;
+	opacity: 0.6;
+}
 a:link, a:visited{
 	text-decoration: none;
 	color: yellow;
@@ -20,6 +26,7 @@ img {
 	position: absolute;
 	opacity: 0.8;
 	max-width: 100%;
+	z-index: 1;
 }
 .credits {
 	position: absolute;
