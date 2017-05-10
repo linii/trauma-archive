@@ -19,7 +19,6 @@ function setup() {
 	img = loadImage("art1.jpg");
 	init();
 
-	textSize(16);
 	new Text().display();
 }
 
@@ -43,12 +42,16 @@ function draw() {
 }
 
 function Text(x, y) {
-	this.string = random(s) + " to interact";
+	this.action = random(s);
+	this.particle = "to interact";
 }
 
 Text.prototype.display = function() {
-	fill("gray")
-	text(this.string, windowWidth/10, windowHeight/10);
+	textSize(20);
+	fill("red");
+	text(this.action, windowWidth/10, windowHeight/15)
+	fill("gray");
+	text(this.particle, windowWidth/10, windowHeight/10);
 }
 
 function inputArchive() {
