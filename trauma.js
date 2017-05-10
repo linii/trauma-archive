@@ -1,11 +1,15 @@
 var mic, recorder, soundFile;
-var size, counter;
-var origSize;
+var origSize, size, counter;
 var multiplier = 1.75;
 var volMult = 0.3;
-var img;
-var x, y;
-var posX, posY;
+var img, x, y, posX, posY;
+
+var s = ["speak the words on the screen",
+		"speak", "talk", "sing", "whisper", "breathe", "laugh", "cry", "yell", "remember",
+		"feel", "be still",
+		"play music"];
+
+var arr = [];
 
 function setup() {
 	noCursor();
@@ -14,6 +18,9 @@ function setup() {
 	inputArchive();
 	img = loadImage("art1.jpg");
 	init();
+
+	textSize(16);
+	new Text().display();
 }
 
 function init() {
@@ -35,21 +42,30 @@ function draw() {
 	counter += 1;
 }
 
+function Text(x, y) {
+	this.string = random(s) + " to interact";
+}
+
+Text.prototype.display = function() {
+	fill("gray")
+	text(this.string, windowWidth/10, windowHeight/10);
+}
+
 function inputArchive() {
 	mic = new p5.AudioIn();
 	mic.start();
 }
 
 function display (vol) {
-	if (vol * size > 0.05 && !keyIsPressed) {
+	if (vol * size > 0.10 && !keyIsPressed) {
 		counter = 0;
 		frameRate(20);
 	}
 
 	size = max(0, (origSize - counter/3) + vol * size * volMult);
 
-	noStroke();
-	fill("black");
+	strokeWeight(0.4);
+	noFill();
 
 	for (var i = 0; i < 10; i++) {
 		var disp1 = random(-1, 1) * randomGaussian(vol * size);
