@@ -66,7 +66,7 @@ function display (vol) {
 	}
 
 	size = max(0, (origSize - counter/3) + vol * size * volMult);
-
+	
 	strokeWeight(0.4);
 	noFill();
 
@@ -87,7 +87,6 @@ function display (vol) {
 			min(y, img.height - imgSize),
 			imgSize, imgSize );
 	}
-
 	// check for bounds
 	if (x > img.width || x < 0)
 		x = random(0, img.width - size);
@@ -113,4 +112,10 @@ function endDirection() {
 	textSize(12);
 	fill("white");
 	text("press any key to exit", 100, 100);
+}
+
+function touchStarted() {
+	if (getAudioContext().state !== 'running') {
+		getAudioContext().resume();
+	}
 }
