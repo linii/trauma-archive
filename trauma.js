@@ -61,6 +61,7 @@ function inputArchive() {
 
 function display (vol) {
 	if (vol * size > 0.10 && !keyIsPressed) {
+		console.log("key is pressed")
 		counter = 0;
 		frameRate(20);
 	}
@@ -78,6 +79,8 @@ function display (vol) {
 		y += disp2 * 2;
 
 		var imgSize = size * multiplier;
+
+		console.log(vol)
 		rect(disp1 + posX, disp2 + posY, size, size);
 		image(img,
 			disp1+posX,
