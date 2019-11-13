@@ -1,2 +1,1 @@
-# trauma-comic-
-based on work of ann cvetkovich 
+An interactive digital installation that responds to sound from your microphone to tell a story. 
